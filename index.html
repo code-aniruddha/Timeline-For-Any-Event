@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background:url(bg1.jpg);
+            backdrop-filter: blur(10px);
+            background-size: cover;
+        }
+        main{
+            position: relative;
+            max-width: 1200px;
+            margin: 100px auto;
+        }
+        section{
+            padding: 50px;
+            position: relative;
+            width: 50%;
+            animation: movedown 1s linear forwards;
+            opacity: 0;
+        }
+        @keyframes movedown {
+            0%{
+                opacity: 1;
+                transform: translateY(-50px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        section:nth-child(1){
+            animation-delay: 0s;
+        }
+        section:nth-child(2){
+            animation-delay: 1s;
+        }
+        section:nth-child(3){
+            animation-delay: 2s;
+        }
+        section:nth-child(4){
+            animation-delay: 3s;
+        }
+        section:nth-child(5){
+            animation-delay: 4s;
+        }
+
+        .text{
+            padding: 20px 30px;
+            color: white;
+            border: 1px solid white;
+            backdrop-filter: blur(10px);
+        
+            position: relative;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        .left-content{
+            left: 0%;
+        }
+        .right-content{
+            left: 50%;
+        }
+       
+           
+        section img{
+            position: absolute;
+            width: 40px;
+            border-radius: 50%;
+            right: -20px;
+            top: 73px;
+            z-index: 10;
+        }
+        .right-content img{
+            left: -20px;
+        }
+        main::after{
+            content: ' ';
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            border-radius: 10px;
+            background-color: white;
+            top: 0px;
+            left: 50%;
+            margin-left: -3px;
+            z-index: -1;
+            animation: moveline 5s linear forwards;
+        }
+        @keyframes moveline {
+            0%{
+                height: 0%;
+            }
+            100%{
+                height: 100%;
+            }
+            
+        }
+
+        .left-arrow ,.right-arrow{
+           height: 0;
+           width: 0;
+           position: absolute;
+           top: 28px;
+           z-index: 1;
+           border-top: 15px solid transparent;
+           border-bottom: 15px solid transparent;
+           border-left: 15px solid white;
+           right: -14px;
+        }
+        .right-arrow{
+            border-left: none;
+            border-right: 15px solid white;
+            left: -14px;
+        }
+
+        .text h2{
+            padding: 10px 10px;
+            text-align: center;
+            font-family: 'Chakra Petch', Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 600;
+        }
+        .text h5 {
+            padding: 9px 9px;
+            text-align: center;
+            font-family: "Montserrat",Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .text p{
+            padding: 6px 6px;
+            font-family: "Poppins",Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1{
+            padding-top: 2vh;
+            text-align: center;
+            color:white;
+        }
+
+        @media screen and (max-width : 600px){
+
+            main{
+                margin: 50px auto;
+            }
+            main::after{
+                left: 32px;
+            }
+
+            section{
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 25px;
+            }
+            .text{
+                font-size: 14px;
+            }
+            .text small{
+                margin-bottom: 10px;
+            }
+            .right-content{
+                left: 0;
+            }
+
+            .left-content img, .right-content img{
+                left: 10px;
+            }
+            .left-arrow, .right-arrow{
+                border-right: 15px solid white;
+                border-left: 0;
+                left: -14px;
+            }
+        }
+        video{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        scale: 1.5;
+        z-index: -1;
+    }
+    </style>
+</head>
+<body>
+   <!-- <video src="sample-2_t7opGXnA.mp4" autoplay loop muted></video> -->
+    <h1>Day 1 </h1>
+     <main>
+        <section class="left-content">
+            <img src="sample.png" alt="">
+            <div class="text">
+                <h2>Event Name</h2>
+                <h5>Timing here</h5>
+                <p>A Small Introduction of the event
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident error fugiat libero facere, incidunt, aut possimus id saepe ea autem quidem perferendis numquam itaque esse sunt alias, illo sequi commodi?
+                </p>
+                <span class="left-arrow"></span>
+            </div>
+        </section>
+        <section class="right-content">
+            <img src="sample.png" alt="">
+            <div class="text">
+                <h2>Event Name</h2>
+                <h5>Timing here</h5>
+                <p>A Small Introduction of the event
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident error fugiat libero facere, incidunt, aut possimus id saepe ea autem quidem perferendis numquam itaque esse sunt alias, illo sequi commodi?
+                </p>
+                <span class="right-arrow"></span>
+            </div>
+        </section>
+        <section class="left-content">
+            <img src="sample.png" alt="">
+            <div class="text">
+                <h2>Event Name</h2>
+                <h5>Timing here</h5>
+                <p>A Small Introduction of the event
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident error fugiat libero facere, incidunt, aut possimus id saepe ea autem quidem perferendis numquam itaque esse sunt alias, illo sequi commodi?
+                </p>
+                <span class="left-arrow"></span>
+            </div>
+        </section>
+        <section class="right-content">
+            <img src="sample.png" alt="">
+            <div class="text">
+                <h2>Event Name</h2>
+                <h5>Timing here</h5>
+                <p>A Small Introduction of the event
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident error fugiat libero facere, incidunt, aut possimus id saepe ea autem quidem perferendis numquam itaque esse sunt alias, illo sequi commodi?
+                </p>
+                <span class="right-arrow"></span>
+            </div>
+        </section>
+        <section class="left-content">
+            <img src="sample.png" alt="">
+            <div class="text">
+                <h2>Event Name</h2>
+                <h5>Timing here</h5>
+                <p>A Small Introduction of the event
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident error fugiat libero facere, incidunt, aut possimus id saepe ea autem quidem perferendis numquam itaque esse sunt alias, illo sequi commodi?
+                </p>
+                <span class="left-arrow"></span>
+            </div>
+        </section>
+     </main>
+</body>
+</html>
